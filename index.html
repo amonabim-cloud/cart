@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>کارت     بانکی</title>
+<style>
+body{
+  font-family:Tahoma;
+  background:#f2f2f2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card{
+  background:#ffffff;
+  width:330px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 5px 20px #aaa;
+}
+.number{
+  font-size:22px;
+  font-weight:bold;
+  direction:ltr;
+}
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:0;
+  border-radius:10px;
+  cursor:pointer;
+}
+</style>
+</head>
 
+<body>
+
+<div class="card">
+<h2>Amonabim</h2>
+
+<p>شماره کارت</p>
+<div class="number" id="card">
+6037-9918-XXXX-XXXX
+</div>
+
+<button onclick="copyCard()">کپی شماره کارت</button>
+
+<p>شماره شبا</p>
+<div>
+IRXXXXXXXXXXXXXXXXXXXX
+</div>
+
+</div>
+
+<script>
+function copyCard(){
+ navigator.clipboard.writeText(
+ document.getElementById("card").innerText
+ );
+ alert("شماره کارت کپی شد");
+}
+</script>
+
+</body>
+</html>
