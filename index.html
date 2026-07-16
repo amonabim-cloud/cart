@@ -327,6 +327,23 @@ IR790600301579816925153001
     کپی شد ✅
 </div>
 <script>
+    const cardInfo = {
+    owner: "محمد مهدی امونبی",
+    bank: "بانک مهر ایران",
+    card: "6063 7311 9329 0732",
+    sheba: "IR79 0600 3015 7981 6925 1530 01"
+};
+    document.title = "کارت بانکی " + cardInfo.owner;
+
+document.querySelector(".bank-name").textContent = cardInfo.bank;
+
+document.querySelector(".owner").textContent = cardInfo.owner;
+
+document.getElementById("cardNumber").textContent = cardInfo.card;
+
+document.getElementById("sheba").textContent = cardInfo.sheba;
+
+    
 const toast = document.getElementById("toast");
 
 function showToast(text){
@@ -354,7 +371,16 @@ document.getElementById("copyCardBtn").onclick = function(){
     showToast("✅ شماره کارت کپی شد");
 
 }
+document.getElementById("copyCardBtn").onclick = function () {
+    navigator.clipboard.writeText(cardInfo.card.replace(/\s/g,""));
+    showToast("✅ شماره کارت کپی شد");
+};
 
+document.getElementById("copyShebaBtn").onclick = function () {
+    navigator.clipboard.writeText(cardInfo.sheba.replace(/\s/g,""));
+    showToast("✅ شماره شبا کپی شد");
+};
+    
 document.getElementById("copyShebaBtn").onclick = function(){
 
     const sheba =
