@@ -1,1 +1,1 @@
-# amonanim-card
+# amonabi-card
