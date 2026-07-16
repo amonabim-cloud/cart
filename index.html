@@ -1,206 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>کارت بانکی</title>
-<script>
 
-const CARD_INFO = {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    owner: "محمد مهدی عمونبی",
+<title>کارت‌های بانکی</title>
 
-    bank: "بانک مهر ایران",
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    card: "6063731193290732",
 
-    sheba: "IR790600301579816925153001"
+<style>
 
-};
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Vazirmatn',sans-serif;
+}
 
-</script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
+body{
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Vazirmatn',sans-serif;
-        }
+    min-height:100vh;
 
-        body{
+    background:
+    linear-gradient(135deg,#0f5132,#178d57,#7fd8aa);
 
-            min-height:100vh;
+    padding:20px;
 
-            display:flex;
-            justify-content:center;
-            align-items:center;
+}
 
-            background:
-            linear-gradient(135deg,#0f5132,#178d57,#7fd8aa);
 
-            padding:20px;
+#cards{
 
-        }
+    display:flex;
 
-        .card{
+    flex-direction:column;
 
-            width:360px;
-            max-width:100%;
+    align-items:center;
 
-            border-radius:24px;
+    gap:25px;
 
-            padding:25px;
+}
 
-            color:#fff;
 
-            position:relative;
+.card{
 
-            overflow:hidden;
+    width:360px;
+    max-width:100%;
 
-            background:
-            linear-gradient(135deg,#0f7d4b,#15915b);
+    border-radius:24px;
 
-            box-shadow:
-            0 25px 50px rgba(0,0,0,.35);
+    padding:25px;
 
-        }
+    color:white;
 
-        .card::before{
+    background:
+    linear-gradient(135deg,#0f7d4b,#15915b);
 
-            content:"";
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.35);
 
-            position:absolute;
+}
 
-            width:250px;
-            height:250px;
 
-            border-radius:50%;
+.bank{
 
-            background:rgba(255,255,255,.08);
+    display:flex;
 
-            top:-120px;
-            left:-80px;
+    justify-content:space-between;
 
-        }
+    align-items:center;
 
-        .bank{
+}
 
-            display:flex;
 
-            justify-content:space-between;
+.bank img{
 
-            align-items:center;
+    width:45px;
 
-            margin-bottom:25px;
+    height:45px;
 
-        }
+    object-fit:contain;
 
-        .bank-name{
+}
 
-            font-size:22px;
 
-            font-weight:700;
+.bank-name{
 
-        }
+    font-size:22px;
 
-        .chip{
+    font-weight:700;
 
-            width:55px;
-            height:42px;
+}
 
-            border-radius:8px;
 
-            background:linear-gradient(#f6d87c,#c89d28);
+.number{
 
-        }
+    margin-top:30px;
 
-        .number{
+    text-align:center;
 
-            margin-top:30px;
+    font-size:24px;
 
-            font-size:25px;
+    letter-spacing:3px;
 
-            letter-spacing:3px;
+}
 
-            text-align:center;
 
-            font-weight:600;
+.owner{
 
-        }
+    margin-top:25px;
 
-        .owner{
+    font-size:18px;
 
-            margin-top:25px;
+}
 
-            font-size:18px;
 
-            font-weight:500;
+.sheba{
 
-        }
+    margin-top:20px;
 
-        .sheba{
+    direction:ltr;
 
-            margin-top:20px;
+    font-size:14px;
 
-            font-size:14px;
+}
 
-            line-height:28px;
-
-            direction:ltr;
-
-            word-break:break-all;
-
-        }
-        /* ---------- دکمه‌های عملیات ---------- */
 
 .actions{
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+
+    margin-top:25px;
+
 }
 
-.btn{
+
+button{
+
     width:100%;
-    border:none;
-    border-radius:14px;
-    padding:14px;
-    font-size:16px;
-    font-weight:600;
+
+    padding:12px;
+
+    border:0;
+
+    border-radius:12px;
+
+    margin-top:10px;
+
     cursor:pointer;
-    transition:.3s;
+
+    font-size:15px;
+
 }
 
-.copy-card{
-    background:#ffffff;
+
+.copy{
+
+    background:white;
+
     color:#0f7d4b;
+
 }
 
-.copy-sheba{
-    background:#dff6ea;
-    color:#0f5132;
-}
-
-.share{
-    background:#0d3f29;
-    color:#fff;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-}
-
-.btn:active{
-    transform:scale(.98);
-}
-
-/* ---------- پیام کپی ---------- */
 
 .toast{
 
@@ -214,19 +177,16 @@ const CARD_INFO = {
 
     background:#222;
 
-    color:#fff;
+    color:white;
 
-    padding:12px 22px;
+    padding:12px 20px;
 
-    border-radius:12px;
+    border-radius:10px;
 
     opacity:0;
 
-    transition:.4s;
-
-    z-index:1000;
-
 }
+
 
 .toast.show{
 
@@ -234,129 +194,37 @@ const CARD_INFO = {
 
 }
 
-/* ---------- انیمیشن ورود کارت ---------- */
-
-.card{
-
-    animation:showCard .8s ease;
-
-}
-
-@keyframes showCard{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px) scale(.95);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0) scale(1);
-
-    }
-
-}
-
-/* ---------- موبایل ---------- */
-
-@media(max-width:420px){
-
-.card{
-
-    width:100%;
-
-}
-
-.number{
-
-    font-size:22px;
-
-}
-
-.bank-name{
-
-    font-size:20px;
-
-}
-
-}
-
-    </style>
+</style>
 
 </head>
 
+
 <body>
 
-<div class="card">
 
-<div class="bank">
+<div id="cards"></div>
 
-<div class="bank-name">
-</div>
-
-<div class="chip"></div>
-
-</div>
-
-<div class="number" id="cardNumber"></div>
-
-<div class="owner"></div>
-
-<div class="sheba" id="sheba"></div>
-<div class="actions">
-
-    <button class="btn copy-card" id="copyCardBtn">
-        📋 کپی شماره کارت
-    </button>
-
-    <button class="btn copy-sheba" id="copyShebaBtn">
-        📋 کپی شماره شبا
-    </button>
-
-    <button class="btn share" id="shareBtn">
-        🔗 اشتراک‌گذاری کارت
-    </button>
-
-</div>
 
 <div class="toast" id="toast">
-    کپی شد ✅
+کپی شد ✅
 </div>
-</div>
+
+
+
+<script src="config.js"></script>
+
+
 <script>
 
-// ===============================
-// اطلاعات اصلی کارت (گلوبال)
-// ===============================
+
+const container =
+document.getElementById("cards");
 
 
-// ===============================
-// نمایش اطلاعات
-// ===============================
-
-document.title = "کارت بانکی " + CARD_INFO.owner;
-
-document.querySelector(".bank-name").textContent =
-    CARD_INFO.bank;
-
-document.querySelector(".owner").textContent =
-    CARD_INFO.owner;
-
-document.getElementById("cardNumber").textContent =
-    formatCard(CARD_INFO.card);
-
-document.getElementById("sheba").textContent =
-    formatSheba(CARD_INFO.sheba);
+const toast =
+document.getElementById("toast");
 
 
-// ===============================
-// فرمت نمایش
-// ===============================
 
 function formatCard(number){
 
@@ -378,16 +246,10 @@ function formatSheba(number){
 }
 
 
-// ===============================
-// پیام
-// ===============================
-
-const toast = document.getElementById("toast");
-
 
 function showToast(text){
 
-    toast.innerText = text;
+    toast.innerText=text;
 
     toast.classList.add("show");
 
@@ -396,81 +258,89 @@ function showToast(text){
 
         toast.classList.remove("show");
 
-    },1800);
+    },1500);
 
 }
 
 
-// ===============================
-// کپی شماره کارت
-// ===============================
-
-document.getElementById("copyCardBtn").onclick = function(){
-
-    navigator.clipboard.writeText(
-        CARD_INFO.card
-    );
-
-    showToast("✅ شماره کارت کپی شد");
-
-};
 
 
-// ===============================
-// کپی شماره شبا
-// ===============================
-
-document.getElementById("copyShebaBtn").onclick = function(){
-
-    navigator.clipboard.writeText(
-        CARD_INFO.sheba
-    );
-
-    showToast("✅ شماره شبا کپی شد");
-
-};
+CARDS.forEach((card,index)=>{
 
 
-// ===============================
-// اشتراک گذاری
-// ===============================
-
-document.getElementById("shareBtn").onclick = async function(){
+container.innerHTML += `
 
 
-    if(navigator.share){
+<div class="card">
 
 
-        await navigator.share({
+<div class="bank">
 
-            title:
-            "کارت بانکی " + CARD_INFO.owner,
+<div class="bank-name">
+${card.bank}
+</div>
 
+<img src="${card.bankLogo}">
 
-            text:
-            CARD_INFO.bank +
-            "\n" +
-            CARD_INFO.owner,
-
-
-            url:
-            window.location.href
-
-        });
+</div>
 
 
-    }else{
+<div class="number">
+${formatCard(card.card)}
+</div>
 
 
-        navigator.clipboard.writeText(
-            window.location.href
-        );
+<div class="owner">
+${card.owner}
+</div>
 
-        showToast("🔗 لینک کپی شد");
 
-    }
+<div class="sheba">
+${formatSheba(card.sheba)}
+</div>
 
-};
+
+<div class="actions">
+
+
+<button class="copy" onclick="copyCard('${card.card}')">
+
+📋 کپی شماره کارت
+
+</button>
+
+
+<button class="copy" onclick="copyCard('${card.sheba}')">
+
+📋 کپی شماره شبا
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+});
+
+
+
+
+function copyCard(value){
+
+
+navigator.clipboard.writeText(value);
+
+
+showToast("✅ کپی شد");
+
+
+}
+
 
 </script>
 
