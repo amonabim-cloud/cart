@@ -1,67 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<title>کارت     بانکی</title>
-<style>
-body{
-  font-family:Tahoma;
-  background:#f2f2f2;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-.card{
-  background:#ffffff;
-  width:330px;
-  padding:25px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 5px 20px #aaa;
-}
-.number{
-  font-size:22px;
-  font-weight:bold;
-  direction:ltr;
-}
-button{
-  margin-top:15px;
-  padding:10px 20px;
-  border:0;
-  border-radius:10px;
-  cursor:pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارت بانکی محمد مهدی امونبی</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Vazirmatn',sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(135deg,#0f5132,#178d57,#7fd8aa);
+
+            padding:20px;
+
+        }
+
+        .card{
+
+            width:360px;
+            max-width:100%;
+
+            border-radius:24px;
+
+            padding:25px;
+
+            color:#fff;
+
+            position:relative;
+
+            overflow:hidden;
+
+            background:
+            linear-gradient(135deg,#0f7d4b,#15915b);
+
+            box-shadow:
+            0 25px 50px rgba(0,0,0,.35);
+
+        }
+
+        .card::before{
+
+            content:"";
+
+            position:absolute;
+
+            width:250px;
+            height:250px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.08);
+
+            top:-120px;
+            left:-80px;
+
+        }
+
+        .bank{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            margin-bottom:25px;
+
+        }
+
+        .bank-name{
+
+            font-size:22px;
+
+            font-weight:700;
+
+        }
+
+        .chip{
+
+            width:55px;
+            height:42px;
+
+            border-radius:8px;
+
+            background:linear-gradient(#f6d87c,#c89d28);
+
+        }
+
+        .number{
+
+            margin-top:30px;
+
+            font-size:25px;
+
+            letter-spacing:3px;
+
+            text-align:center;
+
+            font-weight:600;
+
+        }
+
+        .owner{
+
+            margin-top:25px;
+
+            font-size:18px;
+
+            font-weight:500;
+
+        }
+
+        .sheba{
+
+            margin-top:20px;
+
+            font-size:14px;
+
+            line-height:28px;
+
+            direction:ltr;
+
+            word-break:break-all;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
 <div class="card">
-<h2>Amonabim</h2>
 
-<p>شماره کارت</p>
-<div class="number" id="card">
-6037-9918-XXXX-XXXX
+<div class="bank">
+
+<div class="bank-name">
+بانک مهر ایران
 </div>
 
-<button onclick="copyCard()">کپی شماره کارت</button>
-
-<p>شماره شبا</p>
-<div>
-IRXXXXXXXXXXXXXXXXXXXX
-</div>
+<div class="chip"></div>
 
 </div>
 
-<script>
-function copyCard(){
- navigator.clipboard.writeText(
- document.getElementById("card").innerText
- );
- alert("شماره کارت کپی شد");
-}
-</script>
+<div class="number" id="cardNumber">
 
-</body>
-</html>
+6037 •••• •••• ••••
+
+</div>
+
+<div class="owner">
+
+محمد مهدی امونبی
+
+</div>
+
+<div class="sheba" id="sheba">
+
+IR............................
+
+</div>
