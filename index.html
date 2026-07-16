@@ -361,24 +361,10 @@ function onlyNumbers(text){
 
 document.getElementById("copyCardBtn").onclick = function(){
 
-    const card =
-        onlyNumbers(
-            document.getElementById("cardNumber").innerText
-        );
-
-    navigator.clipboard.writeText(card);
-
-    showToast("✅ شماره کارت کپی شد");
-
-}
+    c
 document.getElementById("copyCardBtn").onclick = function () {
     navigator.clipboard.writeText(cardInfo.card.replace(/\s/g,""));
     showToast("✅ شماره کارت کپی شد");
-};
-
-document.getElementById("copyShebaBtn").onclick = function () {
-    navigator.clipboard.writeText(cardInfo.sheba.replace(/\s/g,""));
-    showToast("✅ شماره شبا کپی شد");
 };
     
 document.getElementById("copyShebaBtn").onclick = function(){
