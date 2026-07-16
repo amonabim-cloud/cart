@@ -326,3 +326,52 @@ IR............................
 <div class="toast" id="toast">
     کپی شد ✅
 </div>
+<script>
+const cardNumber = "60379918XXXXXXXX"; // شماره کارت واقعی خودتان
+const shebaNumber = "IRXXXXXXXXXXXXXXXXXXXXXXXX"; // شبای واقعی خودتان
+
+const toast = document.getElementById("toast");
+
+function showToast(text){
+    toast.innerText = text;
+    toast.classList.add("show");
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },1800);
+}
+
+document.getElementById("copyCardBtn").onclick = function(){
+    navigator.clipboard.writeText(cardNumber);
+    showToast("✅ شماره کارت کپی شد");
+}
+
+document.getElementById("copyShebaBtn").onclick = function(){
+    navigator.clipboard.writeText(shebaNumber);
+    showToast("✅ شماره شبا کپی شد");
+}
+
+document.getElementById("shareBtn").onclick = async function(){
+
+    if(navigator.share){
+
+        await navigator.share({
+            title:"کارت بانکی محمد مهدی امونبی",
+            text:"اطلاعات کارت بانکی",
+            url:window.location.href
+        });
+
+    }else{
+
+        navigator.clipboard.writeText(window.location.href);
+        showToast("🔗 لینک کپی شد");
+
+    }
+
+}
+</script>
+
+</div>
+
+</body>
+
+</html>
