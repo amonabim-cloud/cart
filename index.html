@@ -327,27 +327,45 @@ IR790600301579816925153001
     کپی شد ✅
 </div>
 <script>
-const cardNumber = "6037 9918 1234 5678"; // شماره کارت واقعی خودتان
-const shebaNumber = "IR790600301579816925153001"; // شبای واقعی خودتان
-
 const toast = document.getElementById("toast");
 
 function showToast(text){
     toast.innerText = text;
     toast.classList.add("show");
+
     setTimeout(()=>{
         toast.classList.remove("show");
     },1800);
 }
 
+function onlyNumbers(text){
+    return text.replace(/\s/g,"");
+}
+
 document.getElementById("copyCardBtn").onclick = function(){
-    navigator.clipboard.writeText(cardNumber);
+
+    const card =
+        onlyNumbers(
+            document.getElementById("cardNumber").innerText
+        );
+
+    navigator.clipboard.writeText(card);
+
     showToast("✅ شماره کارت کپی شد");
+
 }
 
 document.getElementById("copyShebaBtn").onclick = function(){
-    navigator.clipboard.writeText(shebaNumber);
+
+    const sheba =
+        onlyNumbers(
+            document.getElementById("sheba").innerText
+        );
+
+    navigator.clipboard.writeText(sheba);
+
     showToast("✅ شماره شبا کپی شد");
+
 }
 
 document.getElementById("shareBtn").onclick = async function(){
@@ -355,21 +373,25 @@ document.getElementById("shareBtn").onclick = async function(){
     if(navigator.share){
 
         await navigator.share({
-            title:"کارت بانکی محمد مهدی عمونبی",
+
+            title:"کارت بانکی محمد مهدی امونبی",
+
             text:"اطلاعات کارت بانکی",
+
             url:window.location.href
+
         });
 
     }else{
 
         navigator.clipboard.writeText(window.location.href);
+
         showToast("🔗 لینک کپی شد");
 
     }
 
 }
 </script>
-
 </div>
 
 </body>
