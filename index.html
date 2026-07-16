@@ -327,82 +327,161 @@ IR790600301579816925153001
     کپی شد ✅
 </div>
 <script>
-    const cardInfo = {
-    owner: "محمد مهدی امونبی",
+
+// ===============================
+// اطلاعات اصلی کارت (گلوبال)
+// ===============================
+
+const CARD_INFO = {
+
+    owner: "محمد مهدی عمونبی",
+
     bank: "بانک مهر ایران",
-    card: "6063 7311 9329 0732",
-    sheba: "IR79 0600 3015 7981 6925 1530 01"
+
+    card: "6063731193290732",
+
+    sheba: "IR790600301579816925153001"
+
 };
-    document.title = "کارت بانکی " + cardInfo.owner;
 
-document.querySelector(".bank-name").textContent = cardInfo.bank;
 
-document.querySelector(".owner").textContent = cardInfo.owner;
+// ===============================
+// نمایش اطلاعات
+// ===============================
 
-document.getElementById("cardNumber").textContent = cardInfo.card;
+document.title = "کارت بانکی " + CARD_INFO.owner;
 
-document.getElementById("sheba").textContent = cardInfo.sheba;
+document.querySelector(".bank-name").textContent =
+    CARD_INFO.bank;
 
-    
+document.querySelector(".owner").textContent =
+    CARD_INFO.owner;
+
+document.getElementById("cardNumber").textContent =
+    formatCard(CARD_INFO.card);
+
+document.getElementById("sheba").textContent =
+    formatSheba(CARD_INFO.sheba);
+
+
+// ===============================
+// فرمت نمایش
+// ===============================
+
+function formatCard(number){
+
+    return number.replace(
+        /(\d{4})(?=\d)/g,
+        "$1 "
+    );
+
+}
+
+
+function formatSheba(number){
+
+    return number.replace(
+        /(.{4})/g,
+        "$1 "
+    ).trim();
+
+}
+
+
+// ===============================
+// پیام
+// ===============================
+
 const toast = document.getElementById("toast");
 
+
 function showToast(text){
+
     toast.innerText = text;
+
     toast.classList.add("show");
 
+
     setTimeout(()=>{
+
         toast.classList.remove("show");
+
     },1800);
+
 }
 
-function onlyNumbers(text){
-    return text.replace(/\s/g,"");
-}
+
+// ===============================
+// کپی شماره کارت
+// ===============================
 
 document.getElementById("copyCardBtn").onclick = function(){
 
-    c
-document.getElementById("copyCardBtn").onclick = function () {
-    navigator.clipboard.writeText(cardInfo.card.replace(/\s/g,""));
+    navigator.clipboard.writeText(
+        CARD_INFO.card
+    );
+
     showToast("✅ شماره کارت کپی شد");
+
 };
-    
+
+
+// ===============================
+// کپی شماره شبا
+// ===============================
+
 document.getElementById("copyShebaBtn").onclick = function(){
 
-    const sheba =
-        onlyNumbers(
-            document.getElementById("sheba").innerText
-        );
-
-    navigator.clipboard.writeText(sheba);
+    navigator.clipboard.writeText(
+        CARD_INFO.sheba
+    );
 
     showToast("✅ شماره شبا کپی شد");
 
-}
+};
+
+
+// ===============================
+// اشتراک گذاری
+// ===============================
 
 document.getElementById("shareBtn").onclick = async function(){
 
+
     if(navigator.share){
+
 
         await navigator.share({
 
-            title:"کارت بانکی محمد مهدی عمونبی",
+            title:
+            "کارت بانکی " + CARD_INFO.owner,
 
-            text:"اطلاعات کارت بانکی",
 
-            url:window.location.href
+            text:
+            CARD_INFO.bank +
+            "\n" +
+            CARD_INFO.owner,
+
+
+            url:
+            window.location.href
 
         });
 
+
     }else{
 
-        navigator.clipboard.writeText(window.location.href);
+
+        navigator.clipboard.writeText(
+            window.location.href
+        );
 
         showToast("🔗 لینک کپی شد");
 
     }
 
-}
+};
+
 </script>
 </div>
 
