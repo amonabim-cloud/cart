@@ -72,7 +72,34 @@ function formatCardNumber(number) {
     return number.replace(/(.{4})/g, "$1 ");
 }
 loadData();
+function copyText(text) {
 
+    navigator.clipboard.writeText(text);
+
+    alert("کپی شد ✅");
+
+}
+
+
+function toggleCard(id) {
+
+    const element = document.getElementById(id);
+
+    if(element.innerText.includes("*")) {
+
+        element.innerText = formatCardNumber(
+            element.dataset.card
+        );
+
+    } else {
+
+        element.innerText = hideCardNumber(
+            element.dataset.card
+        );
+
+    }
+
+}
 
 function hideCardNumber(number) {
 
