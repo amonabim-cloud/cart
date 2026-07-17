@@ -1,5 +1,4 @@
 async function loadData() {
-ت
 const people = await fetch("data/people.json")
 .then(r => r.json());
 
@@ -40,13 +39,14 @@ container.innerHTML += `
     </div>
 
 
-       <p>
-    👤 ${<div 
+{<div 
 class="number"
 id="card-${card.id}"
 data-card="${card.cardNumber}">
 ${hideCardNumber(card.cardNumber)}
-</div>person.name}
+
+       <p>
+    👤 ${person.name}
     </p>
 
 
