@@ -3,12 +3,12 @@
     "id": "meli",
     "name": "بانک ملی",
     "color": "#1E88E5",
-    "logo": "logos/meli.png"
+    "logo": "logos/mehr_1.png"
   },
   {
     "id": "pasargad",
     "name": "بانک پاسارگاد",
     "color": "#D4AF37",
-    "logo": "logos/pasargad.png"
+    "logo": "logos/mehr_1.png"
   }
 ]
