@@ -1,1 +1,30 @@
+body {
+    font-family: Vazirmatn, sans-serif;
+    background: #f2f2f2;
+    direction: rtl;
+}
 
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 330px;
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 15px #ccc;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.number {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
