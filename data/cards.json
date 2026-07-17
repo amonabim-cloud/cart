@@ -1,10 +1,13 @@
-[
-  {
-    "personId": "mehdi",
-    "bankId": "meli",
-    "cardNumber": "6037991234567890",
-    "sheba": "IRxxxxxxxxxxxxxxxxxxxxxxxx",
-    "accountNumber": "1234567890",
-    "default": true
-  }
-]
+{
+  "id": "card-0001",
+  "personId": "mehdi",
+  "bankId": "meli",
+  "alias": "حقوق",
+  "cardNumber": "6037991234567890",
+  "sheba": "IR...",
+  "accountNumber": "1234567890",
+  "default": true,
+  "active": true,
+  "created": "2026-07-17",
+  "updated": "2026-07-17"
+}
