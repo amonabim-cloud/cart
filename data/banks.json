@@ -1,13 +1,13 @@
 [
   {
-    "id": "meli",
-    "name": "بانک ملی",
+    "id": "mehr",
+    "name": "بانک مهر ایران",
     "color": "#1E88E5",
     "logo": "logos/mehr_1.png"
   },
   {
-    "id": "pasargad",
-    "name": "بانک پاسارگاد",
+    "id": "blue",
+    "name": "بانک بلو",
     "color": "#D4AF37",
     "logo": "logos/mehr_1.png"
   }
