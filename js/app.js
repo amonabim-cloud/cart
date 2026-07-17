@@ -37,9 +37,7 @@ container.innerHTML += `
         <h3>${bank.name}</h3>
 
     </div>
-
-
-{<div 
+<div 
 class="number"
 id="card-${card.id}"
 data-card="${card.cardNumber}">
