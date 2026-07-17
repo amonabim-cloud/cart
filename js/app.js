@@ -33,7 +33,6 @@ container.innerHTML += `
 
         <img src="${bank.logo}" 
         class="bank-logo">
-
         <h3>${bank.name}</h3>
 
     </div>
@@ -69,10 +68,7 @@ ${hideCardNumber(card.cardNumber)}
 👁 نمایش
 </button>
 </div>
-
 `;
-
-
 });
 
 }
