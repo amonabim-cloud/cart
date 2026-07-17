@@ -40,12 +40,7 @@ container.innerHTML += `
     </div>
 
 
-    <div class="number">
-        ${formatCardNumber(card.cardNumber)}
-    </div>
-
-
-    <p>
+       <p>
     👤 ${<div 
 class="number"
 id="card-${card.id}"
