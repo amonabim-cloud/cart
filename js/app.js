@@ -57,3 +57,12 @@ ${card.accountNumber}
 }
 
 loadData();
+
+
+function hideCardNumber(number) {
+
+    return number.substring(0,4)
+    + " **** **** "
+    + number.substring(12);
+
+}
