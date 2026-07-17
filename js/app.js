@@ -28,29 +28,41 @@ b => b.id === card.bankId
 
 container.innerHTML += `
 
-<div class="card">
+<div class="card" style="background:${bank.color}">
 
-<h3>${bank.name}</h3>
+    <div class="bank-header">
 
-<div class="number">
-${card.cardNumber}
+        <img src="${bank.logo}" 
+        class="bank-logo">
+
+        <h3>${bank.name}</h3>
+
+    </div>
+
+
+    <div class="number">
+        ${formatCardNumber(card.cardNumber)}
+    </div>
+
+
+    <p>
+    👤 ${person.name}
+    </p>
+
+
+    <p>
+    💳 ${card.title || "کارت بانکی"}
+    </p>
+
+
+    <button onclick="copyText('${card.cardNumber}')">
+    📋 کپی کارت
+    </button>
+
+
 </div>
 
-<p>
-👤 ${person.name}
-</p>
-
-<p>
-شبا:
-${card.sheba}
-</p>
-
-<p>
-حساب:
-${card.accountNumber}
-</p>
-
-</div>
+`;
 
 `;
 
