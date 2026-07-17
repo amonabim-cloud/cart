@@ -30,3 +30,23 @@ body {
     text-align: center;
     margin: 25px 0;
 }
+.bank-header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+.bank-logo {
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+
+.card {
+    color:white;
+    border-radius:20px;
+    padding:20px;
+    width:330px;
+}
